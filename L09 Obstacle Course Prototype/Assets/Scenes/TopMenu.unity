@@ -429,7 +429,7 @@ GameObject:
   - component: {fileID: 806567387}
   - component: {fileID: 806567390}
   m_Layer: 5
-  m_Name: Button Play
+  m_Name: Button Level Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44948906a9d345444b6a14b00de6a15e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneNum: 2
+  SceneNum: 3
 --- !u!1 &815300508
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,6 +574,7 @@ GameObject:
   - component: {fileID: 815300512}
   - component: {fileID: 815300511}
   - component: {fileID: 815300510}
+  - component: {fileID: 815300513}
   m_Layer: 5
   m_Name: Button Credits
   m_TagString: Untagged
@@ -644,7 +645,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 815300511}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 815300513}
+        m_TargetAssemblyTypeName: Spidergram.PlayMenuScene, Assembly-CSharp
+        m_MethodName: PlayScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &815300511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,6 +696,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 815300508}
   m_CullTransparentMesh: 1
+--- !u!114 &815300513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815300508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44948906a9d345444b6a14b00de6a15e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneNum: 2
 --- !u!1 &875809625
 GameObject:
   m_ObjectHideFlags: 0
@@ -1064,7 +1090,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Begin
+  m_Text: Level Select
 --- !u!222 &1835067070
 CanvasRenderer:
   m_ObjectHideFlags: 0

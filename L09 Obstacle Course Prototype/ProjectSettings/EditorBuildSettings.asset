@@ -9,8 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/TopMenu.unity
     guid: e4d922e2c9d7f314ca3a66f387bd7cbc
   - enabled: 1
+    path: Assets/Scenes/Level Select.unity
+    guid: 7885fed99bcb13849a7141ee10851e9b
+  - enabled: 1
     path: Assets/Scenes/How To.unity
     guid: 20a378ca72950004fab17a4fd795281e
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: c4015c758279c534ab0e4c79d3d01e2f
   - enabled: 1
     path: Assets/Scenes/Obstacle Course.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
