@@ -36,7 +36,7 @@ namespace Spidergram
         public Text Healthtext;
         public Text statusText;
         public Text timeText;
-        public float timeShowTimeValue = 180f;  // 10 secs, display time left once time is nearing lose condition
+        public float timeShowTimeValue = 10f;  // 10 secs, display time left once time is nearing lose condition
         public float timeLimit = 180f;  // must finish all before time runs out!
         private float timeCountdown;
 

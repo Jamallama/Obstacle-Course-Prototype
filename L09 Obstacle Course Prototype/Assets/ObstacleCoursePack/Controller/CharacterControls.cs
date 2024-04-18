@@ -28,13 +28,19 @@ public class CharacterControls : MonoBehaviour {
 	public Vector3 checkPoint;
 	private bool slide = false;
 
+	public bool lockCursor = true;  // AMJ lock cursor to center of game window
+	public float groundDelta = 0.1f;
+
+	public Animator anim;
+
 	void  Start (){
 		// get the distance to ground
 		distToGround = GetComponent<Collider>().bounds.extents.y;
+
 	}
 	
 	bool IsGrounded (){
-		return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+		return Physics.Raycast(transform.position, -Vector3.up, distToGround + groundDelta);
 	}
 	
 	void Awake () {
@@ -44,6 +50,14 @@ public class CharacterControls : MonoBehaviour {
 
 		checkPoint = transform.position;
 		Cursor.visible = false;
+
+		if (lockCursor == true)
+			Cursor.lockState = CursorLockMode.Locked;  // AMJ
+		if (anim != null)
+		{
+			anim.SetFloat("speed", 0.5f); // Idle
+			Debug.Log("Set Idle");
+		}
 	}
 	
 	void FixedUpdate () {
@@ -59,10 +73,25 @@ public class CharacterControls : MonoBehaviour {
 				Quaternion tr = Quaternion.LookRotation(targetDir); //Rotation of the character to where it moves
 				Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, Time.deltaTime * rotateSpeed); //Rotate the character little by little
 				transform.rotation = targetRotation;
+
+				if (anim != null)
+				{
+					anim.SetFloat("speed", 1); // Walk
+
+					// Debug.Log("Set Run");
+				}
+			} else
+            {
+				if (anim != null)
+				{
+					anim.SetFloat("speed", 0); // Idle
+					//Debug.Log("Set Idle");
+				}
 			}
 
 			if (IsGrounded())
 			{
+
 			 // Calculate how fast we should be moving
 				Vector3 targetVelocity = moveDir;
 				targetVelocity *= speed;
@@ -112,6 +141,7 @@ public class CharacterControls : MonoBehaviour {
 				{
 					rb.AddForce(moveDir * 0.15f, ForceMode.VelocityChange);
 				}
+
 			}
 		}
 		else

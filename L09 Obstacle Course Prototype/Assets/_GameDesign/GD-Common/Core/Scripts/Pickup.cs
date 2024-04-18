@@ -16,11 +16,10 @@ namespace Spidergram
     * Oct 21, 2021.  Added Object pickups and moved keys to top
     * Nov 28, 2022. Convert to using SendMessage();
     * Dec 6, 2022. useStay for Lava
-    * Apr 25, 2023.  added pickupType here from Pickup2.cs
     */
 
 
-    public enum pickupType
+    public enum pickupTypex
     {
         None,  // default
         Coin,

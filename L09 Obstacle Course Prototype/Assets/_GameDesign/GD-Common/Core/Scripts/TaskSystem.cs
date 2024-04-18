@@ -8,7 +8,6 @@ Spidergram Corp (c)
 Alejandro Jauco
 5/6/2020
 12/8/2020 bug fix for null tasks
-11/10/2023 No Longer PlayerManager1 only PlayerManager
 */
 namespace Spidergram
 {
@@ -22,7 +21,7 @@ namespace Spidergram
         KeyCode key = KeyCode.Tab;
 
         int taskknt;
-        PlayerManager playermgr;
+        PlayerManager1 playermgr;
         int winpoints = 100000;
 
         public Canvas taskCanvas;
@@ -61,7 +60,7 @@ namespace Spidergram
         void Start()
         {
             taskknt = 0;
-            playermgr = GetComponent<PlayerManager>();
+            playermgr = GetComponent<PlayerManager1>();
 
             if (taskCanvas != null)
                 taskCanvas.gameObject.SetActive(false);

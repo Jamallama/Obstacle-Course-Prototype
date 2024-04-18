@@ -64,7 +64,7 @@ namespace Spidergram
             }
             if (player == null)
             {
-                Debug.LogError("'" + tagName + "' not found");
+                Debug.LogError("" + tagName + ". not found");
             }
             if (head == null)
             {
@@ -83,11 +83,6 @@ namespace Spidergram
         // Update is called once per frame
         void Update()
         {
-            if (player == null)
-            {
-                Debug.Log("No Player found");
-                return;
-            }
 
             Vector3 direction = player.position - this.transform.position;
             direction.y = 0;

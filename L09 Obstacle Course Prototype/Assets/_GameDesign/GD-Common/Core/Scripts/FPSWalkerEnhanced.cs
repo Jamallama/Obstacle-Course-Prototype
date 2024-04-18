@@ -1,17 +1,9 @@
 ﻿using UnityEngine;
 
-/*
- * AMJ added lockCursor, 11/27/2023
- */
 
 [RequireComponent(typeof(CharacterController))]
 public class FPSWalkerEnhanced : MonoBehaviour
 {
-    [Tooltip("Lock the cursor and remove visible")]
-    [SerializeField]
-    private bool m_lockCursor = true;
-    private CursorLockMode m_lockCursorSave;
-
     [Tooltip("If true, auto run typing the W key.")]
     [SerializeField]
     private bool m_AutoRun = false;
@@ -85,13 +77,6 @@ public class FPSWalkerEnhanced : MonoBehaviour
 
     private void Start()
     {
-        //AMJ
-        if (m_lockCursor)
-        {
-            m_lockCursorSave = Cursor.lockState;
-            Cursor.lockState = CursorLockMode.Locked;
-        }
-
         // Saving component references to improve performance.
         m_Transform = GetComponent<Transform>();
         m_Controller = GetComponent<CharacterController>();
@@ -101,15 +86,6 @@ public class FPSWalkerEnhanced : MonoBehaviour
         m_RayDistance = m_Controller.height * .5f + m_Controller.radius;
         m_SlideLimit = m_Controller.slopeLimit - .1f;
         m_JumpTimer = m_AntiBunnyHopFactor;
-    }
-
-    private void OnDestroy()
-    {
-        //AMJ
-        if (m_lockCursor)
-        {
-            Cursor.lockState = m_lockCursorSave;
-        }
     }
 
 

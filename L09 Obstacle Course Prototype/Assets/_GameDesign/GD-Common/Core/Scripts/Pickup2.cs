@@ -15,7 +15,7 @@ namespace Spidergram
     * Feb 9, 2021. fixed disable collider to only happen when hit object matches
     * Oct 21, 2021.  Added Object pickups and moved keys to top
     */
-    public enum pickupTypeXXX  //AMJ
+    public enum pickupType
     {
         None,  // default
         Coin,
@@ -166,10 +166,6 @@ namespace Spidergram
                 Collider col = GetComponent<Collider>();
                 col.enabled = false;  // turn off collider so it doesn't work
 
-                go.gameObject.SendMessage("ScorePoints", value, SendMessageOptions.DontRequireReceiver);
-
-
-                /*
                 PlayerManager1 pp = go.GetComponent<PlayerManager1>();
                 if (pp == null)
                 {
@@ -197,7 +193,6 @@ namespace Spidergram
                             break;
                     }
                 }
-                */
                 // PlayOneSound();
 
                 if (rend != null)

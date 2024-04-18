@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace Spidergram
 {
-	// 11/10/2023 Use sendmessage and eliminate PlayerManager2
 
     public class FinishLine : MonoBehaviour
     {
@@ -25,13 +24,11 @@ namespace Spidergram
         private void OnTriggerEnter(Collider col)
         {
             if (col.CompareTag("Player"))
-            {/*
+            {
                 PlayerManager2 pm2 = col.gameObject.GetComponent<PlayerManager2>();
 
                 pm2.ScorePoints(FinishPoints);
                 Debug.Log("Finish line");
-                */
-                col.gameObject.SendMessage("ScorePoints", FinishPoints, SendMessageOptions.DontRequireReceiver);
             }
         }
     }

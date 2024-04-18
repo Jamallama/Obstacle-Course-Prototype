@@ -1,15 +1,9 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 namespace Spidergram
 {
-
-    /*
-     * Alejandro Jauco
-     * 4/26/2023 Added  Restart() NextLevel() QuitGame()
-     * 
-     * */
 
     public class PlayMenuScene : MonoBehaviour
     {
@@ -19,28 +13,35 @@ namespace Spidergram
 
         public void PlayScene()
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(SceneNum);
-        }
-        public void Restart()
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(
-                UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
-        }
-
-        public void NextLevel()
-        {
-            int next = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex + 1;
-            int count = UnityEngine.SceneManagement.SceneManager.sceneCount;
-
-            next = (next >= count ) ? 0: next;
-
-            UnityEngine.SceneManagement.SceneManager.LoadScene(
-                UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex+1);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene(SceneNum);
         }
 
         public void QuitGame()
         {
             Application.Quit();
+        }
+
+        public void xRestartLevel()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        public void RestartLevel()
+        {
+            Scene scene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(scene.name);
+        }
+
+        public void NextLevel()
+        {
+            int curr = SceneManager.GetActiveScene().buildIndex;
+            int next;
+
+            next = (curr + 1 < SceneManager.sceneCount) ? curr + 1 : 0;
+            Debug.Log("Next Scene is " + next);
+            SceneManager.LoadScene(next);
         }
 
     }

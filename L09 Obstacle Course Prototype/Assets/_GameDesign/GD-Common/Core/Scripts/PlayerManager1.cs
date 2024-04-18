@@ -169,7 +169,7 @@ namespace Spidergram
                 Debug.Log("HIT Sound");
                 asrc.PlayOneShot(hitclip);
             }
-            // Debug.Log("Player: HP " + inpoints);
+            Debug.Log("Player: HP " + inpoints);
             return;
         }
 
