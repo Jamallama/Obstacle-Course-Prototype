@@ -3,6 +3,14 @@ using UnityEngine;
 public class Button : MonoBehaviour
 {
     public DoorController doorController;  // Reference to the DoorController script
+    public Material pressedMaterial;  // Material to change to when button is pressed
+    private Material originalMaterial;  // Original material of the button
+
+    void Start()
+    {
+        // Store the original material of the button
+        originalMaterial = GetComponent<Renderer>().material;
+    }
 
     void OnTriggerEnter(Collider other)  // This method is called when something enters the button's trigger collider
     {
@@ -11,12 +19,20 @@ public class Button : MonoBehaviour
             if (doorController != null)
             {
                 doorController.ButtonPressed();  // Notify the DoorController that a button has been pressed
-                gameObject.SetActive(false);  // Disable the button after it has been pressed
+                
+                // Change the material of the button to the pressed material
+                GetComponent<Renderer>().material = pressedMaterial;
             }
             else
             {
                 Debug.LogError("DoorController not set on Button.");
             }
         }
+    }
+
+    void ResetButton()
+    {
+        // Reset the material of the button to its original material
+        GetComponent<Renderer>().material = originalMaterial;
     }
 }

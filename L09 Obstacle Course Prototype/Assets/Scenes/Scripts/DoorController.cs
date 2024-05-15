@@ -4,7 +4,8 @@ public class DoorController : MonoBehaviour
 {
     public Animator doorAnimator1;  // Reference to the first door's Animator component
     public Animator doorAnimator2;  // Reference to the second door's Animator component
-    public string openAnimationName = "OpenDoor";  // The name of the door opening animation
+    public string openAnimationName1 = "OpenDoor1";  // The name of the door opening animation
+    public string openAnimationName2 = "OpenDoor2";  // The name of the door opening animation
     private int buttonsPressed = 0;  // Counter to keep track of how many buttons have been pressed
 
     void Start()
@@ -27,7 +28,7 @@ public class DoorController : MonoBehaviour
     {
         if (doorAnimator1 != null)
         {
-            doorAnimator1.Play(openAnimationName);  // Play the first door opening animation
+            doorAnimator1.Play(openAnimationName1);  // Play the first door opening animation
         }
         else
         {
@@ -36,7 +37,7 @@ public class DoorController : MonoBehaviour
 
         if (doorAnimator2 != null)
         {
-            doorAnimator2.Play(openAnimationName);  // Play the second door opening animation
+            doorAnimator2.Play(openAnimationName2);  // Play the second door opening animation
         }
         else
         {
