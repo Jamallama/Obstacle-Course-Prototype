@@ -13,9 +13,11 @@ namespace Spidergram
         /*
          * Alejandro Jauco
          * 
+         * Modified Lose conditions by Emmanuel Liu
          * derived from PlayerManager1
          * 10/7/2022
          * Uses a different Lose and Win method
+         * 
          */
         //
 
@@ -28,6 +30,7 @@ namespace Spidergram
         public float maxHP = 200;
         public float winpoints = 100f;   // score this and you are a winner
         public float startpoints = 0; // start with something greater than lose value
+        public string losetext = "";
 
         // private float losevalue = -1;
 
@@ -248,7 +251,7 @@ namespace Spidergram
             {
                 winstatus = 1;
 
-                string winstr = "YOU WIN";
+                string winstr = "You won!";
                 Debug.Log(winstr);
                 Debug.Log("T " + total + " " + winpoints);
                 if (statusText != null)
@@ -278,7 +281,7 @@ namespace Spidergram
                 winstatus = -1;  // lose
                 Debug.Log("Time ran out");
 
-
+                GetComponent<CharacterControls>().enabled = false;
                 PlayLoseSound();
 
                 if (useDisableFPC)
@@ -291,7 +294,11 @@ namespace Spidergram
             if (hp <= 0)
             {
                 Debug.Log("YOU Lose");
+                PlayLoseSound();
                 winstatus = -1;
+                GetComponent<CharacterControls>().enabled = false;
+                if (statusText != null)             
+                    statusText.text = losetext;
                 if (LoseObject != null)
                     LoseObject.SetActive(true);
             }
