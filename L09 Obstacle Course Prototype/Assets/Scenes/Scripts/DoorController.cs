@@ -2,10 +2,9 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
-    public Animator doorAnimator1;  // Reference to the first door's Animator component
-    public Animator doorAnimator2;  // Reference to the second door's Animator component
-    public string openAnimationName1 = "OpenDoor1";  // The name of the door opening animation
-    public string openAnimationName2 = "OpenDoor2";  // The name of the door opening animation
+    public Animator doorAnimator;  // Reference to the first door's Animator component
+    public string openAnimationName = "OpenDoor";  // The name of the door opening animation
+    public int buttonsRequired = 3;
     private int buttonsPressed = 0;  // Counter to keep track of how many buttons have been pressed
 
     void Start()
@@ -18,7 +17,7 @@ public class DoorController : MonoBehaviour
         buttonsPressed++;  // Increment the counter when a button is pressed
 
         // Check if all three buttons have been pressed
-        if (buttonsPressed == 3)
+        if (buttonsPressed == buttonsRequired)
         {
             OpenDoors();
         }
@@ -26,22 +25,13 @@ public class DoorController : MonoBehaviour
 
     void OpenDoors()
     {
-        if (doorAnimator1 != null)
+        if (doorAnimator != null)
         {
-            doorAnimator1.Play(openAnimationName1);  // Play the first door opening animation
+            doorAnimator.Play(openAnimationName);  // Play the first door opening animation
         }
         else
         {
             Debug.LogError("First door Animator not set.");
-        }
-
-        if (doorAnimator2 != null)
-        {
-            doorAnimator2.Play(openAnimationName2);  // Play the second door opening animation
-        }
-        else
-        {
-            Debug.LogError("Second door Animator not set.");
         }
     }
 }
