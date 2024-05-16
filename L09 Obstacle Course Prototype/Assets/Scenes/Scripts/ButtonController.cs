@@ -19,9 +19,9 @@ public class Button : MonoBehaviour
             if (doorController != null)
             {
                 doorController.ButtonPressed();  // Notify the DoorController that a button has been pressed
-                
                 // Change the material of the button to the pressed material
                 GetComponent<Renderer>().material = pressedMaterial;
+                GetComponent<Collider>().enabled = false;
             }
             else
             {

@@ -2738,7 +2738,7 @@ Transform:
   m_GameObject: {fileID: 89567922}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.40223226, z: -0, w: 0.91553766}
-  m_LocalPosition: {x: -28.617, y: -8.299, z: 8.912}
+  m_LocalPosition: {x: -21.419998, y: -8.299, z: 0.7599993}
   m_LocalScale: {x: 1.5, y: 0.2, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2827,7 +2827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6014739cd5332fb4b977b27778a10b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorController: {fileID: 0}
+  doorController: {fileID: 871938757}
   pressedMaterial: {fileID: 2100000, guid: fbe273ad84e03c0418b7a000311bed3a, type: 2}
 --- !u!1001 &93889029
 PrefabInstance:
@@ -6955,7 +6955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorAnimator: {fileID: 0}
-  openAnimationName: OpenDoor
+  AnimationClip: {fileID: 0}
   buttonsRequired: 3
 --- !u!1001 &210587770
 PrefabInstance:
@@ -8072,7 +8072,7 @@ GameObject:
   - component: {fileID: 229160877}
   - component: {fileID: 229160880}
   - component: {fileID: 229160879}
-  - component: {fileID: 229160878}
+  - component: {fileID: 229160881}
   m_Layer: 0
   m_Name: Cylinder (18)
   m_TagString: Untagged
@@ -8095,29 +8095,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1741162221}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &229160878
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 229160876}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &229160879
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8168,6 +8145,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 229160876}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &229160881
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229160876}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: -0.0000004172325, y: 0, z: -0.0000005662441}
 --- !u!1 &229822012
 GameObject:
   m_ObjectHideFlags: 0
@@ -18414,7 +18412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorAnimator: {fileID: 0}
-  openAnimationName: OpenDoor
+  AnimationClip: {fileID: 0}
   buttonsRequired: 3
 --- !u!1 &579198948
 GameObject:
@@ -30715,7 +30713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorAnimator: {fileID: 1741162222}
-  openAnimationName: Obstacle 8 Set Animation Fall
+  AnimationClip: {fileID: 7400000, guid: 87b9ac239bf753c40afe029ad29fd381, type: 2}
   buttonsRequired: 5
 --- !u!4 &873436967 stripped
 Transform:
@@ -40716,8 +40714,8 @@ Transform:
   m_GameObject: {fileID: 1183699760}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.002, y: -10.587713, z: -12.509}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.54, y: -8.13, z: -1.56}
+  m_LocalScale: {x: 2.4672, y: 2.4672, z: 2.4672}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1418885946}
@@ -42250,6 +42248,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8125632388333684072, guid: 74fe7eed3ad8ec84bb8770355f363fda, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8125632388429620746, guid: 74fe7eed3ad8ec84bb8770355f363fda, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.36
@@ -44143,7 +44145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimatedObject: {fileID: 0}
   bossActivatable: 0
-  AnimationName: Animation
+  AnimationClip: {fileID: 0}
 --- !u!114 &1275560055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46695,7 +46697,7 @@ Transform:
   m_GameObject: {fileID: 1354007536}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.40223226, z: -0, w: 0.91553766}
-  m_LocalPosition: {x: -28.617, y: -8.389999, z: 8.911999}
+  m_LocalPosition: {x: -21.42, y: -8.389999, z: 0.76}
   m_LocalScale: {x: 2, y: 0.1, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47695,7 +47697,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392144937}
   m_LocalRotation: {x: 0.050418958, y: -0.9073533, z: 0.05310672, w: -0.41394162}
-  m_LocalPosition: {x: 0, y: 0, z: 0.009}
+  m_LocalPosition: {x: 0, y: 0, z: -8.143001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -47703,7 +47705,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 3.132, y: 130.741, z: -7.797}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.723, y: -0.73}
+  m_AnchoredPosition: {x: 5.4740014, y: -0.73}
   m_SizeDelta: {x: 1.4221, y: 0.7059}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1392144939
@@ -49110,7 +49112,7 @@ Transform:
   m_GameObject: {fileID: 1418885945}
   serializedVersion: 2
   m_LocalRotation: {x: 0.05200981, y: -0.39436942, z: -0.000000015163097, w: 0.91747904}
-  m_LocalPosition: {x: -1.571846, y: -1.4115658, z: -0.1143074}
+  m_LocalPosition: {x: 5.6251554, y: -1.4115658, z: -8.266308}
   m_LocalScale: {x: 0.1, y: 0.8, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -50224,7 +50226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6014739cd5332fb4b977b27778a10b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorController: {fileID: 0}
+  doorController: {fileID: 871938757}
   pressedMaterial: {fileID: 2100000, guid: fbe273ad84e03c0418b7a000311bed3a, type: 2}
 --- !u!1 &1453703534
 GameObject:
@@ -51156,7 +51158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6014739cd5332fb4b977b27778a10b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorController: {fileID: 0}
+  doorController: {fileID: 871938757}
   pressedMaterial: {fileID: 2100000, guid: fbe273ad84e03c0418b7a000311bed3a, type: 2}
 --- !u!65 &1494477471
 BoxCollider:
@@ -56665,7 +56667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6014739cd5332fb4b977b27778a10b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorController: {fileID: 0}
+  doorController: {fileID: 871938757}
   pressedMaterial: {fileID: 2100000, guid: fbe273ad84e03c0418b7a000311bed3a, type: 2}
 --- !u!65 &1685949960
 BoxCollider:
@@ -58776,7 +58778,7 @@ Transform:
   m_GameObject: {fileID: 1741162220}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.87, y: 17.09, z: 53.48009}
+  m_LocalPosition: {x: 8.87, y: 17.43, z: 53.48009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -58841,7 +58843,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 56bce8d6fce1cc94e8d6995fb62bb285, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -58877,7 +58879,7 @@ Transform:
   m_GameObject: {fileID: 1741456380}
   serializedVersion: 2
   m_LocalRotation: {x: 0.026060881, y: -0.39692956, z: 0.06010873, w: 0.9155079}
-  m_LocalPosition: {x: -1.6333542, y: -0.68660545, z: -0.07821655}
+  m_LocalPosition: {x: 5.5636473, y: -0.68660545, z: -8.230217}
   m_LocalScale: {x: 1.5000001, y: 0.8000001, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -65069,7 +65071,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimatedObject: {fileID: 1741162222}
   bossActivatable: 1
-  AnimationName: Obstacle 8 Set Animation Rise
+  AnimationClip: {fileID: 7400000, guid: 9ae8b01d65d3df9498b8509ad9cbbfe8, type: 2}
 --- !u!1 &1930301687
 GameObject:
   m_ObjectHideFlags: 0
@@ -68671,7 +68673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6014739cd5332fb4b977b27778a10b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doorController: {fileID: 0}
+  doorController: {fileID: 871938757}
   pressedMaterial: {fileID: 2100000, guid: fbe273ad84e03c0418b7a000311bed3a, type: 2}
 --- !u!1 &2066712347
 GameObject:

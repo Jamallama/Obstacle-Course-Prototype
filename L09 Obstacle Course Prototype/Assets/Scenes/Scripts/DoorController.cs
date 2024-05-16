@@ -3,7 +3,7 @@ using UnityEngine;
 public class DoorController : MonoBehaviour
 {
     public Animator doorAnimator;  // Reference to the first door's Animator component
-    public string openAnimationName = "OpenDoor";  // The name of the door opening animation
+    public AnimationClip AnimationClip = null;  // The name of the door opening animation
     public int buttonsRequired = 3;
     private int buttonsPressed = 0;  // Counter to keep track of how many buttons have been pressed
 
@@ -15,7 +15,7 @@ public class DoorController : MonoBehaviour
     public void ButtonPressed()
     {
         buttonsPressed++;  // Increment the counter when a button is pressed
-
+        Debug.Log("Button Pressed: " + buttonsPressed);
         // Check if all three buttons have been pressed
         if (buttonsPressed == buttonsRequired)
         {
@@ -27,7 +27,7 @@ public class DoorController : MonoBehaviour
     {
         if (doorAnimator != null)
         {
-            doorAnimator.Play(openAnimationName);  // Play the first door opening animation
+            doorAnimator.Play(AnimationClip.name, 0, 0.0f);  // Play the first door opening animation
         }
         else
         {
