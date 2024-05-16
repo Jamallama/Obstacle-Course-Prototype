@@ -1,31 +1,33 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class RespawnPlatforms : MonoBehaviour
+public class RespawnTrigger : MonoBehaviour
 {
-    public GameObject touchedObject;
+    public GameObject platformsParent; // Reference to the parent GameObject containing the platforms
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            Debug.Log("Player touched object");
-            if (touchedObject != null)
+            if (platformsParent != null)
             {
-                Debug.Log("Respawn Called");
-                gameObject.SetActive(true);
-                touchedObject.GetComponent<platformObject>().respawnPlatform();
+                // Get all child objects of the platforms parent
+                Debug.Log("Respawning Platforms");
+                foreach (Transform child in platformsParent.transform)
+                {
+                    RespawnPlatform(child.gameObject);
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Platforms parent is not assigned!");
             }
         }
     }
-}
 
-public class platformObject : MonoBehaviour
-{
-    public void respawnPlatform()
+    private void RespawnPlatform(GameObject platform)
     {
-        gameObject.SetActive(true);
-        Debug.Log("Respawned Platform");
+        platform.SetActive(true); // Activate the platform
+        // You can add additional respawn logic here if needed
+        Debug.Log("Respawned Platform: " + platform.name);
     }
 }
