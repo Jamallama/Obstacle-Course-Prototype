@@ -4,6 +4,16 @@ public class RespawnTrigger : MonoBehaviour
 {
     public GameObject platformsParent; // Reference to the parent GameObject containing the platforms
 
+    private Renderer platformRenderer;
+    private Color initialColor; // Initial color of the platform
+    private float initialAlpha; //Initial alpha value of the platform's color
+
+    private void Start()
+    {
+        platformRenderer = GetComponent<Renderer>();
+        initialColor = platformRenderer.material.color;
+        initialAlpha = initialColor.a;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -27,7 +37,8 @@ public class RespawnTrigger : MonoBehaviour
     private void RespawnPlatform(GameObject platform)
     {
         platform.SetActive(true); // Activate the platform
-        // You can add additional respawn logic here if needed
-        Debug.Log("Respawned Platform: " + platform.name);
+        initialColor.a = initialAlpha;
+        GetComponent<Renderer>().material.color = initialColor;
+        Debug.Log("Respawned Platform: " + platform.name +" with color value " + initialColor);
     }
 }

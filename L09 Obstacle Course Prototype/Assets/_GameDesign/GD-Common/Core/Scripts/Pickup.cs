@@ -204,6 +204,7 @@ namespace Spidergram
                             player.SendMessage("ScorePoints",value);
                             break;
                         case pickupType.Health:
+                            Debug.Log("pickup Health" + gameObject.name);
                             player.SendMessage("AddHealth", value);
                             break;
                         case pickupType.Key1:
