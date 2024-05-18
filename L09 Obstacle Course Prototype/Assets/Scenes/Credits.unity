@@ -242,16 +242,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 298535514}
-  m_LocalRotation: {x: -0, y: 0.041320145, z: -0, w: 0.999146}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1042786854}
-  m_LocalEulerAnglesHint: {x: 0, y: 4.736, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -19.2, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &298535516
@@ -275,7 +275,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -287,7 +287,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <-- Return to Menu
+  m_Text: Return to Menu
 --- !u!222 &298535517
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -579,8 +579,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 37ae78da503392b4eb2b019c63e99418, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -699,7 +699,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3, y: -54}
+  m_AnchoredPosition: {x: 3, y: -43.7}
   m_SizeDelta: {x: 762.0778, y: 293.7415}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1623424950
@@ -724,9 +724,9 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
+    m_FontSize: 15
     m_FontStyle: 0
-    m_BestFit: 1
+    m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
     m_Alignment: 1
@@ -736,8 +736,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Made By: Emmanuel Liu\n\nAssets/Sprites:\n\n https://kenney.nl/assets/input-prompts-pixel-16\nunder
-    the Creative Commons CC0 License\n\nMusic:\n\n\"Voxel Revolution\"\r\nKevin MacLeod
-    (incompetech.com)\r\nLicensed under Creative Commons: By Attribution 3.0\r\nhttp://creativecommons.org/licenses/by/3.0/"
+    the Creative Commons CC0 License\n\nMusic:\n\nTomoya Ohtani\n\"Sonic Lost World
+    \"Tropical Coast Zone Act 3 (Sea Bottom Segue)\"\n\n\nKevin MacLeod (incompetech.com)\r\n\"Voxel
+    Revolution\"\rt\nLicensed under Creative Commons: By Attribution 3.0\r\nhttp://creativecommons.org/licenses/by/3.0/"
 --- !u!222 &1623424951
 CanvasRenderer:
   m_ObjectHideFlags: 0
