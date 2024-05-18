@@ -206,7 +206,7 @@ namespace Spidergram
                     gameObject.tag = "Untagged";
                 }
             }
-            Debug.Log("Player: HP " + inpoints + "by" + gameObject.name);
+            Debug.Log("Player: HP " + inpoints + " by " + gameObject.name);
         }
 
 
