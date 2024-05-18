@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Button : MonoBehaviour
+public class ButtonController : MonoBehaviour
 {
     public DoorController doorController;  // Reference to the DoorController script
     public Material pressedMaterial;  // Material to change to when button is pressed
