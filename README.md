@@ -1,4 +1,3 @@
-# DAID118-L09-Obstacle-Course-Prototype
-Prototype Obstacle Course
+Obstacle-Course-Prototype
 
-Test committ
+DAID-118
